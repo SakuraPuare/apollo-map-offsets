@@ -1,0 +1,1048 @@
+{
+  "transformation": {
+    "translation": {
+      "x": -31782.964574920945,
+      "y": 13075.900300116278
+    },
+    "rotation_radians": -0.009190234623967437,
+    "rotation_degrees": -0.5265616566883333,
+    "rotation_matrix": [
+      [
+        0.9999577700910092,
+        0.00919010525601263
+      ],
+      [
+        -0.00919010525601263,
+        0.9999577700910091
+      ]
+    ]
+  },
+  "accuracy": {
+    "num_matches": 36,
+    "mean_error": 3.732029428460795,
+    "median_error": 3.4454044410824998,
+    "max_error": 6.40448446182954,
+    "min_error": 0.7925881597625087,
+    "std_error": 1.4615648162269108
+  },
+  "simple_offset_stats": {
+    "dx_mean": 8993.72107034416,
+    "dx_std": 2.7923155990214394,
+    "dy_mean": 8996.937789791134,
+    "dy_std": 2.9028341373069715
+  },
+  "matched_pairs": [
+    {
+      "src_index": 0,
+      "dst_index": 71,
+      "src_id": "8396",
+      "dst_id": "15062",
+      "src_pos": {
+        "x": 423381.277,
+        "y": 4438964.757
+      },
+      "dst_pos": {
+        "x": 432380.277,
+        "y": 4447963.757
+      },
+      "matching_cost": 10.731025424389443,
+      "transform_error": 5.492423081149847,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 3,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 3,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 1,
+      "dst_index": 43,
+      "src_id": "8395",
+      "dst_id": "15061",
+      "src_pos": {
+        "x": 423423.39,
+        "y": 4438971.22
+      },
+      "dst_pos": {
+        "x": 432422.39,
+        "y": 4447970.22
+      },
+      "matching_cost": 10.731025424389443,
+      "transform_error": 5.554557470841941,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 3,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 3,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 2,
+      "dst_index": 40,
+      "src_id": "3392",
+      "dst_id": "17496",
+      "src_pos": {
+        "x": 423448.17000000004,
+        "y": 4438968.45
+      },
+      "dst_pos": {
+        "x": 432443.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 4.706458366052317,
+      "transform_error": 2.956645323179492,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 3,
+      "dst_index": 3,
+      "src_id": "3372",
+      "dst_id": "3249",
+      "src_pos": {
+        "x": 423422.39,
+        "y": 4438971.22
+      },
+      "dst_pos": {
+        "x": 432414.92000000004,
+        "y": 4447964.75
+      },
+      "matching_cost": 3.458895108877449,
+      "transform_error": 3.8223397072074317,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 4,
+      "dst_index": 73,
+      "src_id": "3373",
+      "dst_id": "9788",
+      "src_pos": {
+        "x": 423422.39,
+        "y": 4438969.62
+      },
+      "dst_pos": {
+        "x": 432414.92000000004,
+        "y": 4447964.75
+      },
+      "matching_cost": 5.048743356105994,
+      "transform_error": 2.3582223824490893,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 5,
+      "dst_index": 16,
+      "src_id": "5639",
+      "dst_id": "14207",
+      "src_pos": {
+        "x": 423495.02,
+        "y": 4438964.64
+      },
+      "dst_pos": {
+        "x": 432487.07,
+        "y": 4447963.67
+      },
+      "matching_cost": 8.977225195483078,
+      "transform_error": 3.0396803224142355,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 6,
+      "dst_index": 29,
+      "src_id": "6253",
+      "dst_id": "1231451",
+      "src_pos": {
+        "x": 423481.41000000003,
+        "y": 4438964.9
+      },
+      "dst_pos": {
+        "x": 432472.369685284,
+        "y": 4447957.81852736
+      },
+      "matching_cost": 3.47687568743097,
+      "transform_error": 4.59687769038053,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 7,
+      "dst_index": 25,
+      "src_id": "7541",
+      "dst_id": "6380",
+      "src_pos": {
+        "x": 423488.07,
+        "y": 4438964.67
+      },
+      "dst_pos": {
+        "x": 432480.41000000003,
+        "y": 4447963.9
+      },
+      "matching_cost": 9.150653988208113,
+      "transform_error": 3.0131727192848747,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 8,
+      "dst_index": 11,
+      "src_id": "8297",
+      "dst_id": "12073",
+      "src_pos": {
+        "x": 423515.09,
+        "y": 4438969.68
+      },
+      "dst_pos": {
+        "x": 432508.05,
+        "y": 4447966.05
+      },
+      "matching_cost": 6.2669563546351235,
+      "transform_error": 0.7925881597625087,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 9,
+      "dst_index": 4,
+      "src_id": "8474",
+      "dst_id": "3250",
+      "src_pos": {
+        "x": 423462.9,
+        "y": 4438968.41
+      },
+      "dst_pos": {
+        "x": 432456.96,
+        "y": 4447961.22
+      },
+      "matching_cost": 2.9070192591833948,
+      "transform_error": 3.977375887032751,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 10,
+      "dst_index": 26,
+      "src_id": "8943",
+      "dst_id": "4258",
+      "src_pos": {
+        "x": 423456.11,
+        "y": 4438968.46
+      },
+      "dst_pos": {
+        "x": 432451.60000000003,
+        "y": 4447962.75
+      },
+      "matching_cost": 4.871364670585455,
+      "transform_error": 3.089968763605739,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 11,
+      "dst_index": 51,
+      "src_id": "10116",
+      "dst_id": "9870",
+      "src_pos": {
+        "x": 423439.84,
+        "y": 4438968.46
+      },
+      "dst_pos": {
+        "x": 432434.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 4.434125043140254,
+      "transform_error": 2.7905898244385914,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 12,
+      "dst_index": 1,
+      "src_id": "10383",
+      "dst_id": "12305",
+      "src_pos": {
+        "x": 423502.11,
+        "y": 4438964.55
+      },
+      "dst_pos": {
+        "x": 432494.02,
+        "y": 4447963.64
+      },
+      "matching_cost": 9.052676986691099,
+      "transform_error": 3.2206058948245238,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 13,
+      "dst_index": 55,
+      "src_id": "10395",
+      "dst_id": "15244",
+      "src_pos": {
+        "x": 423424.74,
+        "y": 4438970.2
+      },
+      "dst_pos": {
+        "x": 432420.87,
+        "y": 4447962.75
+      },
+      "matching_cost": 3.97297994143694,
+      "transform_error": 5.153588752895994,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 14,
+      "dst_index": 76,
+      "src_id": "10485",
+      "dst_id": "5242",
+      "src_pos": {
+        "x": 423474.97000000003,
+        "y": 4438965.64
+      },
+      "dst_pos": {
+        "x": 432466.073681742,
+        "y": 4447957.82149179
+      },
+      "matching_cost": 2.8133646418363543,
+      "transform_error": 5.186634133616854,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 15,
+      "dst_index": 6,
+      "src_id": "10586",
+      "dst_id": "343434",
+      "src_pos": {
+        "x": 423469.12,
+        "y": 4438966.73
+      },
+      "dst_pos": {
+        "x": 432460.049689867,
+        "y": 4447957.68452879
+      },
+      "matching_cost": 2.238422399460496,
+      "transform_error": 6.40448446182954,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 16,
+      "dst_index": 63,
+      "src_id": "10882",
+      "dst_id": "9869",
+      "src_pos": {
+        "x": 423430.73000000004,
+        "y": 4438969.42
+      },
+      "dst_pos": {
+        "x": 432428.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 5.594492241920644,
+      "transform_error": 5.3459302774332995,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 17,
+      "dst_index": 17,
+      "src_id": "11946",
+      "dst_id": "10510",
+      "src_pos": {
+        "x": 423509.05,
+        "y": 4438967.05
+      },
+      "dst_pos": {
+        "x": 432501.11,
+        "y": 4447963.55
+      },
+      "matching_cost": 6.465509850341897,
+      "transform_error": 1.671802655672267,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 18,
+      "dst_index": 14,
+      "src_id": "3122",
+      "dst_id": "8580",
+      "src_pos": {
+        "x": 423415.92000000004,
+        "y": 4438965.75
+      },
+      "dst_pos": {
+        "x": 432411.74,
+        "y": 4447965.27
+      },
+      "matching_cost": 9.830040827548661,
+      "transform_error": 3.1265703032489403,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 19,
+      "dst_index": 41,
+      "src_id": "11527",
+      "dst_id": "7679",
+      "src_pos": {
+        "x": 423387.9,
+        "y": 4438967.48
+      },
+      "dst_pos": {
+        "x": 432378.677882967,
+        "y": 4447960.89305625
+      },
+      "matching_cost": 3.9865590995966844,
+      "transform_error": 5.014742474290459,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 20,
+      "dst_index": 10,
+      "src_id": "5978",
+      "dst_id": "11654",
+      "src_pos": {
+        "x": 423396.11,
+        "y": 4438967.47
+      },
+      "dst_pos": {
+        "x": 432386.9,
+        "y": 4447966.48
+      },
+      "matching_cost": 9.17688504248577,
+      "transform_error": 3.360869421814046,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 21,
+      "dst_index": 8,
+      "src_id": "6328",
+      "dst_id": "6105",
+      "src_pos": {
+        "x": 423401.92000000004,
+        "y": 4438967.47
+      },
+      "dst_pos": {
+        "x": 432395.11,
+        "y": 4447966.47
+      },
+      "matching_cost": 8.898860361719583,
+      "transform_error": 1.7515520785977612,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 22,
+      "dst_index": 54,
+      "src_id": "8578",
+      "dst_id": "15119",
+      "src_pos": {
+        "x": 423421.87,
+        "y": 4438963.75
+      },
+      "dst_pos": {
+        "x": 432411.74,
+        "y": 4447965.27
+      },
+      "matching_cost": 11.83808254205143,
+      "transform_error": 5.80852441996089,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 23,
+      "dst_index": 77,
+      "src_id": "9742",
+      "dst_id": "8705",
+      "src_pos": {
+        "x": 423429.3,
+        "y": 4438963.75
+      },
+      "dst_pos": {
+        "x": 432420.87,
+        "y": 4447962.75
+      },
+      "matching_cost": 9.011001930432487,
+      "transform_error": 2.8639480902209526,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 24,
+      "dst_index": 59,
+      "src_id": "10830",
+      "dst_id": "16409",
+      "src_pos": {
+        "x": 423444.3,
+        "y": 4438963.75
+      },
+      "dst_pos": {
+        "x": 432434.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 9.388977950375105,
+      "transform_error": 4.229912946076556,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 25,
+      "dst_index": 27,
+      "src_id": "10831",
+      "dst_id": "6455",
+      "src_pos": {
+        "x": 423407.72000000003,
+        "y": 4438967.47
+      },
+      "dst_pos": {
+        "x": 432400.92000000004,
+        "y": 4447966.47
+      },
+      "matching_cost": 8.899079613044586,
+      "transform_error": 1.7992369624766842,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 26,
+      "dst_index": 18,
+      "src_id": "8453",
+      "dst_id": "10958",
+      "src_pos": {
+        "x": 423412.74,
+        "y": 4438966.27
+      },
+      "dst_pos": {
+        "x": 432406.72000000003,
+        "y": 4447966.47
+      },
+      "matching_cost": 10.144288139115792,
+      "transform_error": 2.9756951560404956,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 27,
+      "dst_index": 81,
+      "src_id": "4131",
+      "dst_id": "10957",
+      "src_pos": {
+        "x": 423452.60000000003,
+        "y": 4438963.75
+      },
+      "dst_pos": {
+        "x": 432443.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 9.189290641042618,
+      "transform_error": 3.677335072985484,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 28,
+      "dst_index": 5,
+      "src_id": "9639",
+      "dst_id": "9766",
+      "src_pos": {
+        "x": 423516.8,
+        "y": 4438962.75
+      },
+      "dst_pos": {
+        "x": 432515.8,
+        "y": 4447961.75
+      },
+      "matching_cost": 10.731025424389443,
+      "transform_error": 5.970643252308851,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 29,
+      "dst_index": 89,
+      "src_id": "6284",
+      "dst_id": "16305",
+      "src_pos": {
+        "x": 423525.04000000004,
+        "y": 4438965.45
+      },
+      "dst_pos": {
+        "x": 432515.8,
+        "y": 4447961.75
+      },
+      "matching_cost": 6.589218239916571,
+      "transform_error": 2.951292664461464,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 30,
+      "dst_index": 80,
+      "src_id": "3123",
+      "dst_id": "10797",
+      "src_pos": {
+        "x": 423457.96,
+        "y": 4438962.22
+      },
+      "dst_pos": {
+        "x": 432451.60000000003,
+        "y": 4447962.75
+      },
+      "matching_cost": 10.446459386587422,
+      "transform_error": 3.710141952624746,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 31,
+      "dst_index": 38,
+      "src_id": "6285",
+      "dst_id": "6411",
+      "src_pos": {
+        "x": 423530.44,
+        "y": 4438966.85
+      },
+      "dst_pos": {
+        "x": 432524.04000000004,
+        "y": 4447964.45
+      },
+      "matching_cost": 7.520810096133345,
+      "transform_error": 1.45135519737494,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 32,
+      "dst_index": 83,
+      "src_id": "9743",
+      "dst_id": "16408",
+      "src_pos": {
+        "x": 423435.3,
+        "y": 4438963.75
+      },
+      "dst_pos": {
+        "x": 432428.3,
+        "y": 4447962.75
+      },
+      "matching_cost": 8.896829408355774,
+      "transform_error": 2.091574255085553,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 33,
+      "dst_index": 88,
+      "src_id": "5452",
+      "dst_id": "14218",
+      "src_pos": {
+        "x": 423382.83029043704,
+        "y": 4438966.20135388
+      },
+      "dst_pos": {
+        "x": 432378.677882967,
+        "y": 4447960.89305625
+      },
+      "matching_cost": 5.400374043888816,
+      "transform_error": 3.5299394603509535,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 34,
+      "dst_index": 45,
+      "src_id": "5435",
+      "dst_id": "5562",
+      "src_pos": {
+        "x": 423379.677882967,
+        "y": 4438963.36418217
+      },
+      "dst_pos": {
+        "x": 432378.677882967,
+        "y": 4447962.36418217
+      },
+      "matching_cost": 10.731025424389443,
+      "transform_error": 5.50075285550327,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    },
+    {
+      "src_index": 35,
+      "dst_index": 65,
+      "src_id": "7552",
+      "dst_id": "12101",
+      "src_pos": {
+        "x": 423379.677882967,
+        "y": 4438961.89305625
+      },
+      "dst_pos": {
+        "x": 432378.677882967,
+        "y": 4447962.36418217
+      },
+      "matching_cost": 11.978974530953105,
+      "transform_error": 6.071485353147058,
+      "dimensions": {
+        "src": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        },
+        "dst": {
+          "length": 0.2,
+          "width": 0.2,
+          "height": 1
+        }
+      }
+    }
+  ],
+  "unmatched": {
+    "scenarios_count": 0,
+    "data_count": 61
+  }
+}

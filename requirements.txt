@@ -1,0 +1,15 @@
+# Python dependencies for Apollo Map Offsets Pipeline
+# Install with: pip install -r requirements.txt
+
+# Step 0: Decryption
+pycryptodome>=3.18.0
+
+# Data processing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Protobuf handling
+protobuf>=3.20.0
