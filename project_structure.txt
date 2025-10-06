@@ -1,0 +1,120 @@
+地图和场景偏移校准工作流 - 文件结构
+==========================================
+
+📁 工作目录
+│
+├── 📄 README.md                      完整文档
+├── 📄 QUICKSTART.md                  快速开始指南
+├── 📄 run_pipeline.py                主运行脚本（推荐使用）
+│
+├── 🔧 Pipeline 脚本
+│   ├── step1_calculate_offset.py     步骤1: 计算偏移量（匈牙利算法）
+│   ├── step2a_visualize_matching.py  步骤2a: 匹配可视化
+│   ├── step2b_visualize_obstacles.py 步骤2b: 障碍物可视化
+│   ├── step3_apply_offset_to_map.py  步骤3: 应用偏移到地图
+│   └── step4_create_scenario.py      步骤4: 创建新场景
+│
+├── 📥 input/                         输入文件目录
+│   ├── scenarios.json                原始场景文件（必需）
+│   ├── data.json                     障碍物数据文件（必需）
+│   └── base_map.bin                  地图文件（可选）
+│
+├── 📊 results/                       计算结果目录
+│   └── offset_results.json           偏移量和匹配结果
+│
+├── 🖼️  visualizations/               可视化图表目录
+│   ├── 01_matching_overview.png      匹配总览（6子图）
+│   ├── 02_detailed_matching.png      详细匹配视图
+│   ├── 03_vector_field.png           变换向量场
+│   ├── 04_obstacles_detailed.png     障碍物详细分析
+│   └── 05_obstacles_boxes.png        障碍物边界框
+│
+└── 📤 output/                        最终输出目录
+    ├── base_map_offset.bin           偏移后的地图
+    └── scenarios_new.json            新场景文件
+
+
+工作流程
+========
+
+Step 1: 计算偏移
+   ├─> 读取 input/scenarios.json 和 input/data.json
+   ├─> 使用匈牙利算法匹配障碍物
+   ├─> 计算最优偏移量（平移+旋转）
+   └─> 输出到 results/offset_results.json
+
+Step 2a: 匹配可视化
+   ├─> 读取 results/offset_results.json
+   ├─> 生成3张匹配分析图
+   └─> 保存到 visualizations/01-03_*.png
+
+Step 2b: 障碍物可视化
+   ├─> 读取 input/scenarios.json 和 input/data.json
+   ├─> 读取 results/offset_results.json（匹配信息）
+   ├─> 生成2张障碍物分析图
+   └─> 保存到 visualizations/04-05_*.png
+
+Step 3: 应用偏移到地图（可选）
+   ├─> 读取 input/base_map.bin
+   ├─> 读取 results/offset_results.json
+   ├─> 对所有坐标点应用偏移
+   └─> 输出到 output/base_map_offset.bin
+
+Step 4: 创建新场景
+   ├─> 读取 input/scenarios.json（模板）
+   ├─> 读取 input/data.json（障碍物数据）
+   ├─> 读取 results/offset_results.json（匹配信息）
+   ├─> 生成新的场景文件（连续ID）
+   └─> 输出到 output/scenarios_new.json
+
+
+快速使用
+========
+
+一键运行（推荐）:
+  $ python3 run_pipeline.py
+
+分步运行:
+  $ python3 step1_calculate_offset.py
+  $ python3 step2a_visualize_matching.py
+  $ python3 step2b_visualize_obstacles.py
+  $ python3 step3_apply_offset_to_map.py input/base_map.bin output/base_map_offset.bin --format binary
+  $ python3 step4_create_scenario.py -o output/scenarios_new.json
+
+
+输出说明
+========
+
+results/offset_results.json:
+  - transformation: 变换参数（平移、旋转）
+  - accuracy: 精度统计（平均误差、标准差）
+  - matched_pairs: 所有匹配对详情
+  - simple_offset_stats: 简单平移统计
+
+visualizations/*.png:
+  - 高分辨率（300 DPI）可视化图表
+  - 用于验证匹配质量和偏移计算结果
+
+output/scenarios_new.json:
+  - OpenSCENARIO 格式
+  - 连续的障碍物 ID（1, 2, 3...）
+  - 统一的命名规则（vehicle_*, object_*）
+  - 原始 ID 保存在 properties 中
+
+output/base_map_offset.bin:
+  - Apollo HD Map 格式
+  - 所有坐标点已应用偏移
+  - 保持原有地图结构
+
+
+技术细节
+========
+
+算法: 匈牙利算法（Hungarian Algorithm）
+库: scipy.optimize.linear_sum_assignment
+成本函数: 坐标距离 + 100 × 尺寸差异
+精度: 平均误差 < 5m（优秀）
+
+坐标变换:
+  data = R × scenarios + t
+  其中 R = 旋转矩阵, t = 平移向量
