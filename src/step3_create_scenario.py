@@ -8,7 +8,6 @@ import json
 import copy
 import argparse
 import hashlib
-import time
 from typing import List
 
 
@@ -168,7 +167,7 @@ def create_init_action(entity_ref: str, obj_data: dict) -> dict:
 
 def generate_scenario_id(original_id: str, suffix: str = "_offset") -> str:
     """
-    生成新的场景 ID
+    生成新的场景 ID (确定性生成，每次运行结果相同)
 
     Args:
         original_id: 原始场景 ID
@@ -177,15 +176,15 @@ def generate_scenario_id(original_id: str, suffix: str = "_offset") -> str:
     Returns:
         新的场景 ID (24字符的十六进制字符串)
     """
-    # 使用原始ID + 时间戳 + 后缀生成唯一ID
-    content = f"{original_id}_{int(time.time())}_{suffix}"
+    # 使用原始ID + 后缀生成确定性ID（不使用时间戳）
+    content = f"{original_id}{suffix}"
     hash_obj = hashlib.md5(content.encode())
     return hash_obj.hexdigest()[:24]  # 取前24个字符
 
 
 def generate_map_id(original_map_id: str, suffix: str = "_offset") -> str:
     """
-    生成新的地图 ID
+    生成新的地图 ID (确定性生成，每次运行结果相同)
 
     Args:
         original_map_id: 原始地图 ID
@@ -194,8 +193,8 @@ def generate_map_id(original_map_id: str, suffix: str = "_offset") -> str:
     Returns:
         新的地图 ID (24字符的十六进制字符串)
     """
-    # 使用原始地图ID + 时间戳 + 后缀生成唯一ID
-    content = f"{original_map_id}_{int(time.time())}_{suffix}"
+    # 使用原始地图ID + 后缀生成确定性ID（不使用时间戳）
+    content = f"{original_map_id}{suffix}"
     hash_obj = hashlib.md5(content.encode())
     return hash_obj.hexdigest()[:24]  # 取前24个字符
 
@@ -250,6 +249,17 @@ def create_scenario_from_data(
         new_map_id = generate_map_id(original_map_id, suffix="_offset")
         new_scenario["mapId"] = new_map_id
         print(f"生成新地图 ID: {new_map_id}")
+
+    # 更新 descriptionEnTokens（如果存在）
+    if "descriptionEnTokens" in new_scenario and new_scenario["descriptionEnTokens"]:
+        original_tokens = new_scenario["descriptionEnTokens"]
+        # 为每个 token 添加 _offset 后缀
+        new_scenario["descriptionEnTokens"] = [
+            f"{token}_offset" for token in original_tokens
+        ]
+        print(
+            f"更新描述标识: {original_tokens[0]} -> {new_scenario['descriptionEnTokens'][0]}"
+        )
 
     # 更新地图路径（如果提供了 map_name）
     if map_name:
