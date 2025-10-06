@@ -26,7 +26,7 @@ def setup_chinese_font():
     global _font_props
 
     # 尝试加载本地 simhei.ttf
-    local_font = Path(__file__).parent.parent / 'simhei.ttf'
+    local_font = Path(__file__).parent.parent / "simhei.ttf"
 
     if local_font.exists():
         # 注册本地字体
@@ -37,31 +37,31 @@ def setup_chinese_font():
         font_name = _font_props.get_name()
 
         # 强制设置所有字体相关参数
-        plt.rcParams['font.family'] = 'sans-serif'
-        plt.rcParams['font.sans-serif'] = [font_name]
-        plt.rcParams['axes.unicode_minus'] = False
+        plt.rcParams["font.family"] = "sans-serif"
+        plt.rcParams["font.sans-serif"] = [font_name]
+        plt.rcParams["axes.unicode_minus"] = False
 
         # 强制刷新字体缓存
-        plt.rcParams['font.size'] = 10
+        plt.rcParams["font.size"] = 10
 
         # 设置所有可能使用字体的组件
-        plt.rcParams['xtick.labelsize'] = 10
-        plt.rcParams['ytick.labelsize'] = 10
-        plt.rcParams['legend.fontsize'] = 10
-        plt.rcParams['axes.labelsize'] = 11
-        plt.rcParams['axes.titlesize'] = 12
-        plt.rcParams['figure.titlesize'] = 14
+        plt.rcParams["xtick.labelsize"] = 10
+        plt.rcParams["ytick.labelsize"] = 10
+        plt.rcParams["legend.fontsize"] = 10
+        plt.rcParams["axes.labelsize"] = 11
+        plt.rcParams["axes.titlesize"] = 12
+        plt.rcParams["figure.titlesize"] = 14
 
         print(f"✅ 使用本地字体: {font_name} ({local_font})")
         return font_name
     else:
         # 使用系统字体
         system_fonts = [
-            'Noto Sans CJK SC',
-            'WenQuanYi Zen Hei',
-            'WenQuanYi Micro Hei',
-            'SimHei',
-            'Microsoft YaHei'
+            "Noto Sans CJK SC",
+            "WenQuanYi Zen Hei",
+            "WenQuanYi Micro Hei",
+            "SimHei",
+            "Microsoft YaHei",
         ]
 
         # 尝试创建字体属性对象
@@ -69,12 +69,12 @@ def setup_chinese_font():
             try:
                 _font_props = fm.FontProperties(family=font)
                 break
-            except:
+            except Exception:
                 continue
 
-        plt.rcParams['font.family'] = 'sans-serif'
-        plt.rcParams['font.sans-serif'] = system_fonts
-        plt.rcParams['axes.unicode_minus'] = False
+        plt.rcParams["font.family"] = "sans-serif"
+        plt.rcParams["font.sans-serif"] = system_fonts
+        plt.rcParams["axes.unicode_minus"] = False
 
         print(f"⚠️  本地字体 {local_font} 不存在，使用系统字体")
         return system_fonts[0]

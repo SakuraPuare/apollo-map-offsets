@@ -20,11 +20,11 @@ from pathlib import Path
 
 
 def organize_outputs(
-    scenarios_file: str = 'output/scenarios_new.json',
-    map_file: str = 'output/base_map_offset.bin',
+    scenarios_file: str = "output/scenarios_new.json",
+    map_file: str = "output/base_map_offset.bin",
     original_map_dir: str = None,
-    output_dir: str = 'output',
-    generate_maps: bool = True
+    output_dir: str = "output",
+    generate_maps: bool = True,
 ):
     """
     组织输出文件为 ready-to-use 格式
@@ -38,41 +38,44 @@ def organize_outputs(
     """
     output_path = Path(output_dir)
 
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("Step 6: 组织输出文件")
-    print("="*70)
+    print("=" * 70)
 
     # 创建输出目录结构
-    scenario_dir = output_path / 'scenario'
-    map_base_dir = output_path / 'map'
+    scenario_dir = output_path / "scenario"
+    map_base_dir = output_path / "map"
 
     scenario_dir.mkdir(parents=True, exist_ok=True)
     map_base_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. 处理场景文件
-    print(f"\n📦 处理场景文件...")
+    print("\n📦 处理场景文件...")
     scenarios_path = Path(scenarios_file)
     if scenarios_path.exists():
-        target_scenario = scenario_dir / 'scenarios_offset.json'
+        target_scenario = scenario_dir / "scenarios_offset.json"
         shutil.copy2(scenarios_path, target_scenario)
         print(f"  ✅ 场景文件: {target_scenario}")
     else:
         print(f"  ⚠️  场景文件不存在: {scenarios_path}")
 
     # 2. 处理地图文件
-    print(f"\n🗺️  处理地图文件...")
+    print("\n🗺️  处理地图文件...")
 
     # 从 scenarios.json 读取原始地图路径
     if original_map_dir is None:
-        with open('input/scenarios.json', 'r') as f:
+        with open("input/scenarios.json", "r") as f:
             scenario_data = json.load(f)
 
-        map_path = scenario_data.get('scenario', {}).get(
-            'roadNetwork', {}
-        ).get('logicFile', {}).get('filepath', '')
+        map_path = (
+            scenario_data.get("scenario", {})
+            .get("roadNetwork", {})
+            .get("logicFile", {})
+            .get("filepath", "")
+        )
 
         if map_path:
-            original_map_dir = Path('/apollo_workspace') / map_path
+            original_map_dir = Path("/apollo_workspace") / map_path
     else:
         original_map_dir = Path(original_map_dir)
 
@@ -82,10 +85,10 @@ def organize_outputs(
     if original_map_dir.exists():
         map_name = original_map_dir.name
     else:
-        map_name = 'unknown_map'
+        map_name = "unknown_map"
 
     # 创建偏移后的地图目录
-    offset_map_dir = map_base_dir / f'{map_name}_offset'
+    offset_map_dir = map_base_dir / f"{map_name}_offset"
     offset_map_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"  目标地图目录: {offset_map_dir}")
@@ -93,7 +96,7 @@ def organize_outputs(
     # 复制 base_map.bin
     map_path = Path(map_file)
     if map_path.exists():
-        target_base_map = offset_map_dir / 'base_map.bin'
+        target_base_map = offset_map_dir / "base_map.bin"
         shutil.copy2(map_path, target_base_map)
         print(f"  ✅ base_map.bin ({map_path.stat().st_size / 1024 / 1024:.2f} MB)")
     else:
@@ -101,49 +104,59 @@ def organize_outputs(
 
     # 生成 sim_map.bin 和 routing_map.bin（如果需要）
     if generate_maps:
-        print(f"\n  🔧 生成地图文件...")
+        print("\n  🔧 生成地图文件...")
 
         # 使用统一的 map_generator 模块
         import subprocess
+
         try:
-            result = subprocess.run(
+            subprocess.run(
                 [
-                    'python3', 'src/map_generator.py',
-                    '--map_dir', str(offset_map_dir),
-                    '--map_filename', 'base_map.bin'
+                    "python3",
+                    "src/map_generator.py",
+                    "--map_dir",
+                    str(offset_map_dir),
+                    "--map_filename",
+                    "base_map.bin",
                 ],
                 capture_output=True,
                 text=True,
-                timeout=600
+                timeout=600,
             )
 
             # 检查生成的文件
-            sim_map_path = offset_map_dir / 'sim_map.bin'
-            routing_map_path = offset_map_dir / 'routing_map.bin'
+            sim_map_path = offset_map_dir / "sim_map.bin"
+            routing_map_path = offset_map_dir / "routing_map.bin"
 
             if sim_map_path.exists():
-                print(f"  ✅ sim_map.bin ({sim_map_path.stat().st_size / 1024 / 1024:.2f} MB)")
+                print(
+                    f"  ✅ sim_map.bin ({sim_map_path.stat().st_size / 1024 / 1024:.2f} MB)"
+                )
 
             if routing_map_path.exists():
-                print(f"  ✅ routing_map.bin ({routing_map_path.stat().st_size / 1024 / 1024:.2f} MB)")
+                print(
+                    f"  ✅ routing_map.bin ({routing_map_path.stat().st_size / 1024 / 1024:.2f} MB)"
+                )
 
         except Exception as e:
             print(f"  ⚠️  地图文件生成失败: {e}")
     else:
         # 不生成，从原地图复制
-        sim_map_source = output_path / 'sim_map.bin'
+        sim_map_source = output_path / "sim_map.bin"
         if sim_map_source.exists():
-            target_sim_map = offset_map_dir / 'sim_map.bin'
+            target_sim_map = offset_map_dir / "sim_map.bin"
             shutil.copy2(sim_map_source, target_sim_map)
-            print(f"  ✅ sim_map.bin ({sim_map_source.stat().st_size / 1024 / 1024:.2f} MB)")
+            print(
+                f"  ✅ sim_map.bin ({sim_map_source.stat().st_size / 1024 / 1024:.2f} MB)"
+            )
 
     # 复制 metaInfo.json
     if original_map_dir.exists():
-        meta_info_source = original_map_dir / 'metaInfo.json'
+        meta_info_source = original_map_dir / "metaInfo.json"
         if meta_info_source.exists():
-            target_meta = offset_map_dir / 'metaInfo.json'
+            target_meta = offset_map_dir / "metaInfo.json"
             shutil.copy2(meta_info_source, target_meta)
-            print(f"  ✅ metaInfo.json (从原地图复制)")
+            print("  ✅ metaInfo.json (从原地图复制)")
 
     # 3. 生成使用说明
     readme_content = f"""# Apollo Map Offsets - 输出文件
@@ -217,28 +230,28 @@ http://localhost:8888
 - 生成时间: {Path(__file__).stat().st_mtime}
 """
 
-    readme_path = output_path / 'README.md'
-    with open(readme_path, 'w', encoding='utf-8') as f:
+    readme_path = output_path / "README.md"
+    with open(readme_path, "w", encoding="utf-8") as f:
         f.write(readme_content)
 
     print(f"\n📝 使用说明: {readme_path}")
 
     # 4. 显示总结
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("✅ 输出文件组织完成!")
-    print("="*70)
+    print("=" * 70)
     print(f"\n📁 输出目录: {output_path.absolute()}")
-    print(f"\n场景文件:")
+    print("\n场景文件:")
     print(f"  - {scenario_dir / 'scenarios_offset.json'}")
-    print(f"\n地图目录:")
+    print("\n地图目录:")
     print(f"  - {offset_map_dir}/")
-    print(f"    - base_map.bin")
-    if (offset_map_dir / 'sim_map.bin').exists():
-        print(f"    - sim_map.bin")
-    if (offset_map_dir / 'routing_map.bin').exists():
-        print(f"    - routing_map.bin")
-    if (offset_map_dir / 'metaInfo.json').exists():
-        print(f"    - metaInfo.json")
+    print("    - base_map.bin")
+    if (offset_map_dir / "sim_map.bin").exists():
+        print("    - sim_map.bin")
+    if (offset_map_dir / "routing_map.bin").exists():
+        print("    - routing_map.bin")
+    if (offset_map_dir / "metaInfo.json").exists():
+        print("    - metaInfo.json")
 
     print(f"\n💡 使用方法请查看: {readme_path}")
 
@@ -253,10 +266,12 @@ def main():
     except Exception as e:
         print(f"\n❌ 错误: {e}")
         import traceback
+
         traceback.print_exc()
         return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
+
     sys.exit(main())
